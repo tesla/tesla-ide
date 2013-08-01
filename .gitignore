@@ -4,3 +4,4 @@ target/
 /.project
 /workspace
 product.xml
+pom.xml
