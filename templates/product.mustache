@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?pde version="3.5"?>
+
+<product 
+  name="TeslaIDE" 
+  uid="{{productId}}" 
+  id="{{productId}}" 
+  application="org.eclipse.ui.ide.workbench" 
+  version="1.0.0.qualifier" 
+  useFeatures="true" 
+  includeLaunchers="true">
+
+   <aboutInfo>
+      <text>
+         Specified in the plugin.xml of the branding plugin.
+      </text>
+   </aboutInfo>
+
+   <configIni use="default">
+   </configIni>
+   
+   <launcherArgs>
+      <programArgs>-product {{pluginId}}.product --launcher.defaultAction openFile</programArgs>
+      <programArgsWin>--launcher.XXMaxPermSize256M</programArgsWin>
+      <vmArgs>-Dosgi.requiredJavaVersion=1.6 -Xms40m -Xmx1024m</vmArgs>
+      <!-- TODO: this should be a contribution model -->
+      <vmArgs>-javaagent:lombok.jar</vmArgs>                                                                                                                                               
+      <vmArgs>-Xbootclasspath/a:lombok.jar</vmArgs>
+      <vmArgsLin>-XX:MaxPermSize=256m</vmArgsLin>
+      <vmArgsMac>-XstartOnFirstThread -Dorg.eclipse.swt.internal.carbon.smallFonts -XX:MaxPermSize=256m</vmArgsMac>
+   </launcherArgs>
+
+   <!--
+   If you have a branding plugin the progress bar and message rect need to be taken from that. Setting it here seems to
+   have no effect, but you need to specify the branding plugin to get the image. Not very consistent.
+   -->
+
+   <splash  
+     location="io.tesla.ide"/>
+                
+   <launcher name="{{launcherName}}">                                                                                                                                                                                        
+      <solaris/>                                                                                                                                                                                                    
+      <win useIco="false">                                                                                                                                                                                          
+         <bmp/>                                                                                                                                                                                                     
+      </win>                                                                                                                                                                                                        
+   </launcher>   
+
+   <windowImages i16="/io.tesla.ide/eclipse16.png" i32="/io.tesla.ide/eclipse32.png" i48="/io.tesla.ide/eclipse48.png"/>
+   
+   <launcher name="{{launcherName}}">
+      <solaris/>
+      <win useIco="false">
+         <bmp/>
+      </win>
+   </launcher>
+
+   <vm>
+      <!--
+      <linux include="true">org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/J2SE-1.7</linux>
+      <macos include="true">org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/J2SE-1.7</macos>
+      <solaris include="true">org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/J2SE-1.7</solaris>
+      <windows include="true">org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/J2SE-1.7</windows>
+      -->
+   </vm>
+
+  <plugins>
+  </plugins>
+
+  <features>
+  {{#features}}
+    <feature id="{{id}}"/>
+  {{/features}}
+  </features>
+  
+  <configurations>
+    <plugin id="org.eclipse.core.runtime" autoStart="true" startLevel="4" />
+    <plugin id="org.eclipse.equinox.common" autoStart="true" startLevel="2" />
+    <plugin id="org.eclipse.equinox.ds" autoStart="true" startLevel="2" />
+    <plugin id="org.eclipse.equinox.event" autoStart="true" startLevel="2" />
+    <plugin id="org.eclipse.equinox.p2.reconciler.dropins" autoStart="true" startLevel="4" />
+    <plugin id="org.eclipse.equinox.simpleconfigurator" autoStart="true" startLevel="1" />
+    <plugin id="org.eclipse.update.configurator" autoStart="true" startLevel="3" />
+  </configurations>
+</product>

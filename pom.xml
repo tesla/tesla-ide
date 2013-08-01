@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <version>1.0.0-SNAPSHOT</version>
+  <groupId>org.sonatype.maven.ide</groupId>
+  <artifactId>maven-ide-parent</artifactId>
+  <packaging>pom</packaging>
+  <name>TeslaIDE :: Parent</name>
+  
+  <!--
+   |
+   | N = nightly
+   | M = milestone
+   | R = release
+   |
+   -->
+  <properties>
+    <tycho-version>0.16.0</tycho-version>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+  </properties>
+
+  <modules>
+    <module>io.tesla.ide</module>
+    <module>io.tesla.ide.feature</module>
+    <module>io.tesla.ide.rcp</module>
+  </modules>
+
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.eclipse.tycho</groupId>
+        <artifactId>target-platform-configuration</artifactId>
+        <version>${tycho-version}</version>
+        <configuration>
+          <resolver>p2</resolver>
+          <environments>
+            <environment>
+              <os>macosx</os>
+              <ws>cocoa</ws>
+              <arch>x86_64</arch>
+            </environment>
+          </environments>
+        </configuration>
+      </plugin>
+      <plugin>
+        <groupId>org.eclipse.tycho</groupId>
+        <artifactId>tycho-maven-plugin</artifactId>
+        <version>${tycho-version}</version>
+        <extensions>true</extensions>
+      </plugin>
+    </plugins>
+  </build>
+
+  <repositories>
+    <repository>
+      <id>eclipse</id>
+      <url>http://download.eclipse.org/releases/kepler</url>
+      <layout>p2</layout>
+    </repository>              
+    <repository>
+      <id>m2eTycho</id>
+      <url>http://repository.tesla.io:8081/nexus/content/sites/m2e.extras/m2eclipse-tycho/0.7.0/N/0.7.0.201302171659</url>
+      <layout>p2</layout>
+    </repository>              
+    <repository>
+      <id>sourcelookup</id>
+      <url>http://repository.tesla.io:8081/nexus/content/sites/m2e.extras/sourcelookup/1.1.0/N/1.1.0.201305050326</url>
+      <layout>p2</layout>
+    </repository>              
+    <repository>
+      <id>tychodev</id>
+      <url>http://repository.tesla.io:8081/nexus/content/sites/m2e.extras/tychodev/0.2.0/N/0.2.0.201305091121/</url>
+      <layout>p2</layout>
+    </repository>              
+    <repository>
+      <id>plexus</id>
+      <url>http://repository.tesla.io:8081/nexus/content/sites/m2e.extras/m2eclipse-plexus/0.15.0/N/0.15.0.201302101151</url>
+      <layout>p2</layout>
+    </repository>              
+    <repository>
+      <id>modello</id>
+      <url>http://repository.tesla.io:8081/nexus/content/sites/m2e.extras/m2eclipse-modello/0.16.0/N/0.16.0.201302171621</url>
+      <layout>p2</layout>
+    </repository>              
+    <repository>
+      <id>sisu</id>
+      <url>http://repository.tesla.io:8081/nexus/content/sites/m2e.extras/m2eclipse-sisu/0.15.0/N/0.15.0.201207090126/</url>
+      <layout>p2</layout>
+    </repository>              
+    <repository>
+      <id>mavenarchiver</id>
+      <url>http://repository.tesla.io:8081/nexus/content/sites/m2e.extras/m2eclipse-mavenarchiver/0.15.0/N/0.15.0.201212080009/</url>
+      <layout>p2</layout>
+    </repository>              
+    <repository>
+      <id>m2eEgit</id>
+      <url>http://repository.tesla.io:8081/nexus/content/sites/m2e.extras/m2eclipse-egit/0.14.0/N/0.14.0.201305250025/</url>
+      <layout>p2</layout>
+    </repository>              
+    <repository>
+      <id>m2eAntlr</id>
+      <url>http://repository.tesla.io:8081/nexus/content/sites/m2e.extras/m2eclipse-antlr/0.15.0/N/0.15.0.201302040035/</url>
+      <layout>p2</layout>
+    </repository>              
+    <repository>
+      <id>nexuside</id>
+      <url>http://repository.tesla.io:8081/nexus/content/sites/m2e.extras/nexuside/1.0.0/N/1.0.0.201303100224/</url>
+      <layout>p2</layout>
+    </repository>              
+    <repository>
+      <id>yedit</id>
+      <url>http://dadacoalition.org/yedit/</url>
+      <layout>p2</layout>
+    </repository>              
+    <repository>
+      <id>workspacemechanic</id>
+      <url>http://workspacemechanic.eclipselabs.org.codespot.com/git.update/mechanic/</url>
+      <layout>p2</layout>
+    </repository>              
+    <repository>
+      <id>vjet</id>
+      <url>http://download.eclipse.org/vjet/updates-0.10</url>
+      <layout>p2</layout>
+    </repository>              
+    <repository>
+      <id>jrebel</id>
+      <url>http://update.zeroturnaround.com/update-site/</url>
+      <layout>p2</layout>
+    </repository>              
+  </repositories>
+</project>

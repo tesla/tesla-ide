@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?pde version="3.5"?>
+
+<product 
+  name="TeslaIDE" 
+  uid="io.tesla.ide.rcp.product" 
+  id="io.tesla.ide.rcp.product" 
+  application="org.eclipse.ui.ide.workbench" 
+  version="1.0.0.qualifier" 
+  useFeatures="true" 
+  includeLaunchers="true">
+
+   <aboutInfo>
+      <text>
+         Specified in the plugin.xml of the branding plugin.
+      </text>
+   </aboutInfo>
+
+   <configIni use="default">
+   </configIni>
+   
+   <launcherArgs>
+      <programArgs>-product io.tesla.ide.product --launcher.defaultAction openFile</programArgs>
+      <programArgsWin>--launcher.XXMaxPermSize256M</programArgsWin>
+      <vmArgs>-Dosgi.requiredJavaVersion=1.6 -Xms40m -Xmx1024m</vmArgs>
+      <vmArgsLin>-XX:MaxPermSize=256m</vmArgsLin>
+      <vmArgsMac>-XstartOnFirstThread -Dorg.eclipse.swt.internal.carbon.smallFonts -XX:MaxPermSize=256m</vmArgsMac>
+   </launcherArgs>
+
+   <!--
+   If you have a branding plugin the progress bar and message rect need to be taken from that. Setting it here seems to
+   have no effect, but you need to specify the branding plugin to get the image. Not very consistent.
+   -->
+
+   <splash  
+     location="io.tesla.ide"/>
+                
+   <launcher name="TeslaIDE">                                                                                                                                                                                        
+      <solaris/>                                                                                                                                                                                                    
+      <win useIco="false">                                                                                                                                                                                          
+         <bmp/>                                                                                                                                                                                                     
+      </win>                                                                                                                                                                                                        
+   </launcher>   
+
+   <windowImages i16="/io.tesla.ide/eclipse16.png" i32="/io.tesla.ide/eclipse32.png" i48="/io.tesla.ide/eclipse48.png"/>
+   
+   <launcher name="TeslaIDE">
+      <solaris/>
+      <win useIco="false">
+         <bmp/>
+      </win>
+   </launcher>
+
+   <vm>
+      <!--
+      <linux include="true">org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/J2SE-1.7</linux>
+      <macos include="true">org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/J2SE-1.7</macos>
+      <solaris include="true">org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/J2SE-1.7</solaris>
+      <windows include="true">org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/J2SE-1.7</windows>
+      -->
+   </vm>
+
+  <plugins>
+  </plugins>
+
+  <features>
+    <feature id="org.eclipse.platform"/>
+    <feature id="org.eclipse.platform.source"/>
+    <feature id="org.eclipse.rcp"/>
+    <feature id="org.eclipse.rcp.source"/>
+    <feature id="org.eclipse.jdt"/>
+    <feature id="org.eclipse.jdt.source"/>
+    <feature id="org.eclipse.pde"/>
+    <feature id="org.eclipse.pde.source"/>
+    <feature id="org.eclipse.equinox.p2.user.ui"/>
+    <feature id="org.eclipse.help"/>
+    <feature id="org.eclipse.egit"/>
+    <feature id="org.eclipse.jgit"/>
+    <feature id="org.eclipse.wb.core.feature"/>
+    <feature id="org.eclipse.wb.core.ui.feature"/>
+    <feature id="org.eclipse.wb.layout.group.feature"/>
+    <feature id="org.eclipse.wb.swt.feature"/>
+    <feature id="org.eclipse.wb.rcp.feature"/>
+    <feature id="org.eclipse.mylyn.github.feature"/>
+    <feature id="io.tesla.ide.feature"/>
+    <feature id="org.eclipse.m2e.feature"/>
+    <feature id="org.eclipse.m2e.logback.feature"/>
+    <feature id="org.sonatype.tycho.m2e.feature"/>
+    <feature id="com.ifedorenko.m2e.sourcelookup.feature"/>
+    <feature id="com.ifedorenko.m2e.tychodev.feature"/>
+    <feature id="org.sonatype.m2e.plexus.annotations.feature"/>
+    <feature id="org.sonatype.m2e.modello.feature"/>
+    <feature id="org.sonatype.m2e.sisu.feature"/>
+    <feature id="org.sonatype.m2e.mavenarchiver.feature"/>
+    <feature id="org.sonatype.m2e.egit.feature"/>
+    <feature id="org.sonatype.m2e.antlr.feature"/>
+    <feature id="com.ifedorenko.m2e.nexusdev.feature"/>
+    <feature id="org.dadacoalition.yedit"/>
+    <feature id="com.google.eclipse.mechanic"/>
+    <feature id="org.eclipse.vjet.core"/>
+    <feature id="org.zeroturnaround.eclipse.feature"/>
+    <feature id="org.zeroturnaround.eclipse.m2e.feature"/>
+  </features>
+  
+  <configurations>
+    <plugin id="org.eclipse.core.runtime" autoStart="true" startLevel="4" />
+    <plugin id="org.eclipse.equinox.common" autoStart="true" startLevel="2" />
+    <plugin id="org.eclipse.equinox.ds" autoStart="true" startLevel="2" />
+    <plugin id="org.eclipse.equinox.event" autoStart="true" startLevel="2" />
+    <plugin id="org.eclipse.equinox.p2.reconciler.dropins" autoStart="true" startLevel="4" />
+    <plugin id="org.eclipse.equinox.simpleconfigurator" autoStart="true" startLevel="1" />
+    <plugin id="org.eclipse.update.configurator" autoStart="true" startLevel="3" />
+  </configurations>
+</product>

@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <version>{{mavenVersion}}</version>
+  <groupId>org.sonatype.maven.ide</groupId>
+  <artifactId>maven-ide-parent</artifactId>
+  <packaging>pom</packaging>
+  <name>TeslaIDE :: Parent</name>
+  
+  <!--
+   |
+   | N = nightly
+   | M = milestone
+   | R = release
+   |
+   -->
+  <properties>
+    <tycho-version>{{tychoVersion}}</tycho-version>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+  </properties>
+
+  <modules>
+    <module>{{pluginId}}</module>
+    <module>{{featureId}}</module>
+    <module>{{productDirectory}}</module>
+  </modules>
+
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.eclipse.tycho</groupId>
+        <artifactId>target-platform-configuration</artifactId>
+        <version>${tycho-version}</version>
+        <configuration>
+          <resolver>p2</resolver>
+          <environments>
+            {{#windows}}
+            <environment>
+              <os>win32</os>
+              <ws>win32</ws>
+              <arch>x86_64</arch>
+            </environment>
+            {{/windows}}
+            {{#linux}}
+            <environment>
+              <os>linux</os>
+              <ws>gtk</ws>
+              <arch>x86_64</arch>
+            </environment>
+            {{/linux}}
+            {{#osx}}
+            <environment>
+              <os>macosx</os>
+              <ws>cocoa</ws>
+              <arch>x86_64</arch>
+            </environment>
+            {{/osx}}
+          </environments>
+        </configuration>
+      </plugin>
+      <plugin>
+        <groupId>org.eclipse.tycho</groupId>
+        <artifactId>tycho-maven-plugin</artifactId>
+        <version>${tycho-version}</version>
+        <extensions>true</extensions>
+      </plugin>
+    </plugins>
+  </build>
+
+  <repositories>
+    {{#repositories}}
+    <repository>
+      <id>{{id}}</id>
+      <url>{{url}}</url>
+      <layout>p2</layout>
+    </repository>              
+    {{/repositories}}
+  </repositories>
+</project>
