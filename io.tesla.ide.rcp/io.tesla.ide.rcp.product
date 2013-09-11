@@ -22,7 +22,12 @@
    <launcherArgs>
       <programArgs>-product io.tesla.ide.product --launcher.defaultAction openFile</programArgs>
       <programArgsWin>--launcher.XXMaxPermSize256M</programArgsWin>
-      <vmArgs>-Dosgi.requiredJavaVersion=1.6 -Xms40m -Xmx1024m</vmArgs>
+      <vmArgs>-Dosgi.requiredJavaVersion=1.6</vmArgs>
+      <vmArgs>-Xms40m</vmArgs>
+      <vmArgs>-Xmx1024m</vmArgs>
+      <!-- TODO: this should be a contribution model -->
+      <vmArgs>-javaagent:lombok.jar</vmArgs>                                                                                                                                               
+      <vmArgs>-Xbootclasspath/a:lombok.jar</vmArgs>
       <vmArgsLin>-XX:MaxPermSize=256m</vmArgsLin>
       <vmArgsMac>-XstartOnFirstThread -Dorg.eclipse.swt.internal.carbon.smallFonts -XX:MaxPermSize=256m</vmArgsMac>
    </launcherArgs>
