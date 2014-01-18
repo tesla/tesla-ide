@@ -63,13 +63,14 @@
 		  </property>
          <property 
                name="cssTheme"
-               value="org.eclipse.e4.ui.css.theme.e4_classic">
+               value="net.jeeeyul.eclipse.themes.chrome">
          </property>
          <property
                name="applicationCSSResources" 
                value="platform:/plugin/org.eclipse.platform/images/"> 
          </property>
-	<!-- Build ID in startup splash - only for nightlies and milestones, not for releases -->
+		  
+   	<!-- Build ID in startup splash - only for nightlies and milestones, not for releases -->
     <property
           name="buildIdLocation"
           value="300,180">
@@ -85,7 +86,7 @@
          point="org.eclipse.ui.intro">
       <introProductBinding
             introId="org.eclipse.ui.intro.universal"
-            productId="{{productId}}">
+            productId="io.tesla.ide.rcp.product">
       </introProductBinding>
    </extension>
    
@@ -336,7 +337,7 @@
    
    <extension
    		point="org.eclipse.help.base.activitySupport">
-      <support productId="{{productId}}">
+      <support productId="io.tesla.ide.rcp.product">
          <showAllMessage>
             %helpActivitySupport.showAllMessage
          </showAllMessage>
@@ -367,7 +368,7 @@
    <extension
          point="org.eclipse.ui.activitySupport">
       <triggerPointAdvisorProductBinding
-            productId="{{productId}}"
+            productId="io.tesla.ide.rcp.product"
             triggerPointAdvisorId="org.eclipse.ui.ide.triggerPointAdvisor"/>
    </extension>
    

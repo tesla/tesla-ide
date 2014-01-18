@@ -22,14 +22,11 @@
    <launcherArgs>
       <programArgs>-product io.tesla.ide.product --launcher.defaultAction openFile</programArgs>
       <programArgsWin>--launcher.XXMaxPermSize256M</programArgsWin>
-      <vmArgs>-Dosgi.requiredJavaVersion=1.6</vmArgs>
-      <vmArgs>-Xms40m</vmArgs>
-      <vmArgs>-Xmx1024m</vmArgs>
-      <!-- TODO: this should be a contribution model -->
-      <vmArgs>-javaagent:lombok.jar</vmArgs>                                                                                                                                               
-      <vmArgs>-Xbootclasspath/a:lombok.jar</vmArgs>
-      <vmArgsLin>-XX:MaxPermSize=256m</vmArgsLin>
-      <vmArgsMac>-XstartOnFirstThread -Dorg.eclipse.swt.internal.carbon.smallFonts -XX:MaxPermSize=256m</vmArgsMac>
+      <!--
+      <vmArgs>-Xms40m -Xmx1024m -javaagent:lombok.jar -Xbootclasspath/a:lombok.jar -XX:MaxPermSize=256m</vmArgs>
+      -->
+      <vmArgs>-Xms40m -Xmx1024m -XX:MaxPermSize=256m</vmArgs>
+      <vmArgsMac>-XstartOnFirstThread -Dorg.eclipse.swt.internal.carbon.smallFonts</vmArgsMac>
    </launcherArgs>
 
    <!--
@@ -91,8 +88,9 @@
     <feature id="org.eclipse.m2e.feature"/>
     <feature id="org.eclipse.m2e.logback.feature"/>
     <feature id="org.sonatype.tycho.m2e.feature"/>
+    <feature id="org.sonatype.tycho.m2e.feature"/>
     <feature id="com.ifedorenko.m2e.sourcelookup.feature"/>
-    <feature id="com.ifedorenko.m2e.tychodev.feature"/>
+    <feature id="com.ifedorenko.m2e.mavendev.feature"/>
     <feature id="org.sonatype.m2e.plexus.annotations.feature"/>
     <feature id="org.sonatype.m2e.modello.feature"/>
     <feature id="org.sonatype.m2e.sisu.feature"/>
@@ -100,11 +98,12 @@
     <feature id="org.sonatype.m2e.egit.feature"/>
     <feature id="org.sonatype.m2e.antlr.feature"/>
     <feature id="com.ifedorenko.m2e.nexusdev.feature"/>
+    <feature id="io.tesla.m2e.onboarding.feature"/>
     <feature id="org.dadacoalition.yedit"/>
-    <feature id="com.google.eclipse.mechanic"/>
-    <feature id="org.eclipse.vjet.core"/>
-    <feature id="org.zeroturnaround.eclipse.feature"/>
-    <feature id="org.zeroturnaround.eclipse.m2e.feature"/>
+    <feature id="org.eclipse.xtext.xtend2.sdk"/>
+    <feature id="com.github.eclipsecolortheme.feature"/>
+    <feature id="net.jeeeyul.eclipse.themes.feature"/>
+    <feature id="org.eclipse.e4.tools.css.spy.feature"/>
   </features>
   
   <configurations>

@@ -22,14 +22,11 @@
    <launcherArgs>
       <programArgs>-product {{pluginId}}.product --launcher.defaultAction openFile</programArgs>
       <programArgsWin>--launcher.XXMaxPermSize256M</programArgsWin>
-      <vmArgs>-Dosgi.requiredJavaVersion=1.6</vmArgs>
-      <vmArgs>-Xms40m</vmArgs>
-      <vmArgs>-Xmx1024m</vmArgs>
-      <!-- TODO: this should be a contribution model -->
-      <vmArgs>-javaagent:lombok.jar</vmArgs>                                                                                                                                               
-      <vmArgs>-Xbootclasspath/a:lombok.jar</vmArgs>
-      <vmArgsLin>-XX:MaxPermSize=256m</vmArgsLin>
-      <vmArgsMac>-XstartOnFirstThread -Dorg.eclipse.swt.internal.carbon.smallFonts -XX:MaxPermSize=256m</vmArgsMac>
+      <!--
+      <vmArgs>-Xms40m -Xmx1024m -javaagent:lombok.jar -Xbootclasspath/a:lombok.jar -XX:MaxPermSize=256m</vmArgs>
+      -->
+      <vmArgs>-Xms40m -Xmx1024m -XX:MaxPermSize=256m</vmArgs>
+      <vmArgsMac>-XstartOnFirstThread -Dorg.eclipse.swt.internal.carbon.smallFonts</vmArgsMac>
    </launcherArgs>
 
    <!--

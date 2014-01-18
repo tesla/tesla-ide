@@ -13,7 +13,7 @@ productId: io.tesla.ide.rcp.product
 repos: 
  - 
    id: eclipse
-   url: http://download.eclipse.org/releases/kepler 
+   url: http://download.eclipse.org/releases/luna 
 
 platforms:
  - osx
@@ -47,20 +47,25 @@ featureSets:
     - id: org.eclipse.m2e.feature
     - id: org.eclipse.m2e.logback.feature
  -    
+  m2e:
+   repo: http://nexus.tesla.io:8081/nexus/content/sites/m2e.extras/m2e/1.5.0/N/LATEST/
+   features:  
+    - id: org.sonatype.tycho.m2e.feature    
+ -    
   m2eTycho:
    repo: http://repository.tesla.io:8081/nexus/content/sites/m2e.extras/m2eclipse-tycho/0.7.0/N/0.7.0.201302171659
    features:  
     - id: org.sonatype.tycho.m2e.feature
  -    
   sourcelookup:
-   repo: http://repository.tesla.io:8081/nexus/content/sites/m2e.extras/sourcelookup/1.1.0/N/1.1.0.201305050326
+   repo: http://repository.tesla.io:8081/nexus/content/sites/m2e.extras/sourcelookup/1.1.0/N/1.1.0.201311250413/
    features:  
     - id: com.ifedorenko.m2e.sourcelookup.feature
  -    
   tychodev:
-   repo: http://repository.tesla.io:8081/nexus/content/sites/m2e.extras/tychodev/0.2.0/N/0.2.0.201305091121/
+   repo: http://repository.tesla.io:8081/nexus/content/sites/m2e.extras/mavendev/0.2.0/N/0.2.0.201311250430/
    features:  
-    - id: com.ifedorenko.m2e.tychodev.feature
+    - id: com.ifedorenko.m2e.mavendev.feature
  -    
   plexus:
    repo: http://repository.tesla.io:8081/nexus/content/sites/m2e.extras/m2eclipse-plexus/0.15.0/N/0.15.0.201302101151
@@ -83,7 +88,7 @@ featureSets:
     - id: org.sonatype.m2e.mavenarchiver.feature
  -    
   m2eEgit:
-   repo: http://repository.tesla.io:8081/nexus/content/sites/m2e.extras/m2eclipse-egit/0.14.0/N/0.14.0.201305250025/
+   repo: http://repository.tesla.io:8081/nexus/content/sites/m2e.extras/m2eclipse-egit/0.14.0/N/0.14.0.201401060018/
    features:  
     - id: org.sonatype.m2e.egit.feature
  -    
@@ -97,26 +102,32 @@ featureSets:
    features:  
     - id: com.ifedorenko.m2e.nexusdev.feature
  -    
+  onboarding:
+   repo: http://repository.tesla.io:8081/nexus/content/sites/m2e.extras/m2eclipse-onboarding/0.0.1/N/0.0.1.201311162311/
+   features:  
+    - id: io.tesla.m2e.onboarding.feature
+ -    
   yedit:
    repo: http://dadacoalition.org/yedit/
    features:  
     - id: org.dadacoalition.yedit
  -    
-  workspacemechanic:
-   repo: http://workspacemechanic.eclipselabs.org.codespot.com/git.update/mechanic/    
+  xtend2:
+   repo: http://download.eclipse.org/modeling/tmf/xtext/updates/composite/releases
    features:  
-    - id: com.google.eclipse.mechanic
+    - id: org.eclipse.xtext.xtend2.sdk
  -    
-  vjet:
-   repo: http://download.eclipse.org/vjet/updates-0.10   
+  eclipsecolor:
+   repo: http://eclipse-color-theme.github.com/update
    features:  
-    - id: org.eclipse.vjet.core
+    - id: com.github.eclipsecolortheme.feature
  -    
-  jrebel:
-   repo: http://update.zeroturnaround.com/update-site/
+  chrometheme:
+   repo: https://raw.github.com/jeeeyul/eclipse-themes/master/net.jeeeyul.eclipse.themes.updatesite
    features:  
-    - id: org.zeroturnaround.eclipse.feature
-    - id: org.zeroturnaround.eclipse.m2e.feature
-    
-
-
+    - id: net.jeeeyul.eclipse.themes.feature
+ -    
+  cssspy: 
+   repo: http://download.eclipse.org/e4/downloads/drops/S-0.15-201401152200/repository/
+   features:  
+    - id: org.eclipse.e4.tools.css.spy.feature

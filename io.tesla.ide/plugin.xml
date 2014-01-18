@@ -63,13 +63,14 @@
 		  </property>
          <property 
                name="cssTheme"
-               value="org.eclipse.e4.ui.css.theme.e4_classic">
+               value="net.jeeeyul.eclipse.themes.chrome">
          </property>
          <property
                name="applicationCSSResources" 
                value="platform:/plugin/org.eclipse.platform/images/"> 
          </property>
-	<!-- Build ID in startup splash - only for nightlies and milestones, not for releases -->
+		  
+   	<!-- Build ID in startup splash - only for nightlies and milestones, not for releases -->
     <property
           name="buildIdLocation"
           value="300,180">
