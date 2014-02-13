@@ -6,6 +6,14 @@ Right now if you want to build your own Eclipse distribution edit the `product.y
 ./product.rb
 ```
 
+This will generate all the appropriate Maven build files and then you run:
+
+```
+mvn clean package
+```
+
+This will give you an Eclipse distribution in the `io.tesla.ide.rcp.product` project in the `target` directory.
+
 This is a bit of a hack right now because the POMs, product and feature files are generated for the Tycho build that produces the distribution, but there is still a directory that contains static resources. Eventually I would like to bundle up the static resources in a resource bundle that can be configured, but for now it is what it is. You can create your own custom Eclipse distribution it's just not 100% parameterized.
 
 Here's a full example of what a product file might look like:
