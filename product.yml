@@ -12,9 +12,9 @@ productId: io.tesla.ide.rcp.product
 
 repos: 
  - 
-   id: eclipse
-   url: http://download.eclipse.org/releases/luna 
-
+  id: eclipse
+  url: http://download.eclipse.org/releases/luna 
+   
 platforms:
  - osx
 
@@ -39,71 +39,38 @@ featureSets:
     - id: org.eclipse.wb.layout.group.feature
     - id: org.eclipse.wb.swt.feature
     - id: org.eclipse.wb.rcp.feature   
-    - id: org.eclipse.mylyn.github.feature     
  -  
   m2eclipse:
+   repo: http://repository.takari.io:8081/nexus/content/sites/m2e.extras/m2e/1.6.0/N/LATEST/
+   features:
+    - id: io.tesla.ide.feature
+    - id: org.eclipse.m2e.feature
+    - id: org.eclipse.m2e.logback.feature
+ -  
+  takari-team:
+   repo: http://repository.takari.io:8081/nexus/content/sites/m2e.extras/takari-team/0.1.0/N/LATEST/
    features:
     - id: io.tesla.ide.feature
     - id: org.eclipse.m2e.feature
     - id: org.eclipse.m2e.logback.feature
  -    
-  m2e:
-   repo: http://nexus.tesla.io:8081/nexus/content/sites/m2e.extras/m2e/1.5.0/N/LATEST/
-   features:  
-    - id: org.sonatype.tycho.m2e.feature    
- -    
-  m2eTycho:
-   repo: http://repository.tesla.io:8081/nexus/content/sites/m2e.extras/m2eclipse-tycho/0.7.0/N/0.7.0.201302171659
-   features:  
-    - id: org.sonatype.tycho.m2e.feature
- -    
-  sourcelookup:
-   repo: http://repository.tesla.io:8081/nexus/content/sites/m2e.extras/sourcelookup/1.1.0/N/1.1.0.201311250413/
-   features:  
-    - id: com.ifedorenko.m2e.sourcelookup.feature
- -    
-  tychodev:
-   repo: http://repository.tesla.io:8081/nexus/content/sites/m2e.extras/mavendev/0.2.0/N/0.2.0.201311250430/
-   features:  
-    - id: com.ifedorenko.m2e.mavendev.feature
- -    
-  plexus:
-   repo: http://repository.tesla.io:8081/nexus/content/sites/m2e.extras/m2eclipse-plexus/0.15.0/N/0.15.0.201302101151
-   features:  
-    - id: org.sonatype.m2e.plexus.annotations.feature
- -    
-  modello:
-   repo: http://repository.tesla.io:8081/nexus/content/sites/m2e.extras/m2eclipse-modello/0.16.0/N/0.16.0.201302171621
-   features:  
-    - id: org.sonatype.m2e.modello.feature
- -    
-  sisu:
-   repo: http://repository.tesla.io:8081/nexus/content/sites/m2e.extras/m2eclipse-sisu/0.15.0/N/0.15.0.201207090126/
-   features:  
-    - id: org.sonatype.m2e.sisu.feature
- -    
-  mavenarchiver:
-   repo: http://repository.tesla.io:8081/nexus/content/sites/m2e.extras/m2eclipse-mavenarchiver/0.15.0/N/0.15.0.201212080009/
-   features:  
-    - id: org.sonatype.m2e.mavenarchiver.feature
- -    
   m2eEgit:
-   repo: http://repository.tesla.io:8081/nexus/content/sites/m2e.extras/m2eclipse-egit/0.14.0/N/0.14.0.201401060018/
+   repo: http://repository.takari.io:8081/nexus/content/sites/m2e.extras/m2eclipse-egit/0.14.0/N/0.14.0.201401060018/
    features:  
     - id: org.sonatype.m2e.egit.feature
  -    
   m2eAntlr:
-   repo: http://repository.tesla.io:8081/nexus/content/sites/m2e.extras/m2eclipse-antlr/0.15.0/N/0.15.0.201302040035/
+   repo: http://repository.takari.io:8081/nexus/content/sites/m2e.extras/m2eclipse-antlr/0.15.0/N/0.15.0.201302040035/
    features:  
     - id: org.sonatype.m2e.antlr.feature
  -    
   nexuside:
-   repo: http://repository.tesla.io:8081/nexus/content/sites/m2e.extras/nexuside/1.0.0/N/1.0.0.201303100224/
+   repo: http://repository.takari.io:8081/nexus/content/sites/m2e.extras/nexuside/1.0.0/N/1.0.0.201303100224/
    features:  
     - id: com.ifedorenko.m2e.nexusdev.feature
  -    
   onboarding:
-   repo: http://repository.tesla.io:8081/nexus/content/sites/m2e.extras/m2eclipse-onboarding/0.0.1/N/0.0.1.201311162311/
+   repo: http://repository.takari.io:8081/nexus/content/sites/m2e.extras/m2eclipse-onboarding/0.0.1/N/0.0.1.201406270046/
    features:  
     - id: io.tesla.m2e.onboarding.feature
  -    
@@ -123,11 +90,11 @@ featureSets:
     - id: com.github.eclipsecolortheme.feature
  -    
   chrometheme:
-   repo: https://raw.github.com/jeeeyul/eclipse-themes/master/net.jeeeyul.eclipse.themes.updatesite
-   features:  
+   repo: http://eclipse.jeeeyul.net/update/
+   features: 
     - id: net.jeeeyul.eclipse.themes.feature
  -    
   cssspy: 
-   repo: http://download.eclipse.org/e4/downloads/drops/S-0.15-201401152200/repository/
+   repo:  http://download.eclipse.org/e4/updates/0.16-I-builds/
    features:  
     - id: org.eclipse.e4.tools.css.spy.feature
