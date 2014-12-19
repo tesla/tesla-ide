@@ -134,3 +134,7 @@ featureSets:
     - id: org.zeroturnaround.eclipse.feature
     - id: org.zeroturnaround.eclipse.m2e.feature
 ```
+
+### Other examples
+
+- <https://github.com/gamerson/poshi-ide>
