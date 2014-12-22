@@ -1,10 +1,10 @@
 #!/usr/bin/env ruby
 
 # Copyright (c) 2013 to Jason van Zyl
-# All rights reserved. This program and the accompanying materials                                                                                                                                          
-# are made available under the terms of the Eclipse Public License v1.0                                                                                                                                     
-# which accompanies this distribution, and is available at                                                                                                                                                  
-# http://www.eclipse.org/legal/epl-v10.html   
+# All rights reserved. This program and the accompanying materials
+# are made available under the terms of the Eclipse Public License v1.0
+# which accompanies this distribution, and is available at
+# http://www.eclipse.org/legal/epl-v10.html
 
 require 'mustache'
 require 'rexml/document'
@@ -58,37 +58,46 @@ end
 
 # Plugin
 template = File.open('templates/plugin.mustache').read
-plugin = Mustache.render(template, vars)  
-File.open(pluginId + "/plugin.xml", 'w') { |f| 
-  f.write(plugin) 
+plugin = Mustache.render(template, vars)
+File.open(pluginId + "/plugin.xml", 'w') { |f|
+  f.write(plugin)
 }
 
 # Feature
 template = File.open('templates/feature.mustache').read
-feature = Mustache.render(template, vars)  
-File.open(featureDirectory + "/feature.xml", 'w') { |f| 
-  f.write(feature) 
+feature = Mustache.render(template, vars)
+File.open(featureDirectory + "/feature.xml", 'w') { |f|
+  f.write(feature)
 }
 
 # Product
 template = File.open('templates/product.mustache').read
-product = Mustache.render(template, vars)  
-File.open("io.tesla.ide.rcp/io.tesla.ide.rcp.product", 'w') { |f| 
-  f.write(product) 
+product = Mustache.render(template, vars)
+File.open("io.tesla.ide.rcp/io.tesla.ide.rcp.product", 'w') { |f|
+  f.write(product)
 }
 
 # Poms
 pomTemplate = File.open('templates/pom.parent.mustache').read
-parentPom = Mustache.render(pomTemplate, vars)  
-File.open("pom.xml", 'w') { |f| 
-  f.write(parentPom) 
+parentPom = Mustache.render(pomTemplate, vars)
+File.open("pom.xml", 'w') { |f|
+  f.write(parentPom)
 }
 
 pomTemplate = File.open('templates/pom.product.mustache').read
-productPom = Mustache.render(pomTemplate, vars)  
-File.open(productDirectory + "/pom.xml", 'w') { |f| 
-  f.write(productPom) 
+productPom = Mustache.render(pomTemplate, vars)
+File.open(productDirectory + "/pom.xml", 'w') { |f|
+  f.write(productPom)
 }
 
+pomTemplate = File.open('templates/pom.feature.mustache').read
+featurePom = Mustache.render(pomTemplate, vars)
+File.open(featureDirectory + "/pom.xml", 'w') { |f|
+  f.write(featurePom)
+}
 
-
+pomTemplate = File.open('templates/pom.plugin.mustache').read
+pluginPom = Mustache.render(pomTemplate, vars)
+File.open(pluginId + "/pom.xml", 'w') { |f|
+  f.write(pluginPom)
+}
