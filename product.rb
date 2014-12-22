@@ -90,5 +90,14 @@ File.open(productDirectory + "/pom.xml", 'w') { |f|
   f.write(productPom)
 }
 
+pomTemplate = File.open('templates/pom.feature.mustache').read
+featurePom = Mustache.render(pomTemplate, vars)
+File.open(featureDirectory + "/pom.xml", 'w') { |f|
+  f.write(featurePom)
+}
 
-
+pomTemplate = File.open('templates/pom.plugin.mustache').read
+pluginPom = Mustache.render(pomTemplate, vars)
+File.open(pluginId + "/pom.xml", 'w') { |f|
+  f.write(pluginPom)
+}
